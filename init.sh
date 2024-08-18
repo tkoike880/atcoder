@@ -31,13 +31,21 @@ function prev() {
   cd ../$next
 }
 
-function judge() {
+function build() {
   g++ -std=gnu++2b -O2 -DONLINE_JUDGE -DATCODER \
   -Wall -Wextra \
   -mtune=native -march=native \
   -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 \
   -I $SCRIPT_DIR/ac-library \
   -o a.out main.cpp
+}
+
+function run() {
+  ./a.out < test/sample-$1.in
+}
+
+function judge() {
+  build
   if poetry run oj t; then
     acc s
   fi
