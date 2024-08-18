@@ -37,6 +37,7 @@ function build() {
   -mtune=native -march=native \
   -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 \
   -I $SCRIPT_DIR/ac-library \
+  -I $SCRIPT_DIR/lib \
   -o a.out main.cpp
 }
 
