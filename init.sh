@@ -47,7 +47,7 @@ function run() {
 
 function judge() {
   build
-  if poetry run oj t; then
+  if poetry run oj t -N; then
     acc s
   fi
 }
