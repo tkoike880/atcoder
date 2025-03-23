@@ -51,3 +51,9 @@ function judge() {
     acc s
   fi
 }
+
+function acc-start() {
+  cd $SCRIPT_DIR
+  acc new $1
+  cd $1/a
+}
